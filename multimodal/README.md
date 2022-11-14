@@ -24,8 +24,13 @@ Lxmert built on two single-modal network architectures that is used for source s
 ![alt text](https://github.com/emrecanacikgoz/papers/blob/main/multimodal/figs/lxmert.png)
 
 
+
 ## Visual-Bert
-To-Do
+[r221031:1908:UCLA:816cite:VisualBERT:A Simple and Performant Baseline for Vision and Language.pdf](https://arxiv.org/pdf/1908.03557.pdf)
+
+VisualBERT is a pre-trained model build on stack of Transformer layers image and text inputs are jointly processed with self-attention. It consist of seperate embeddings as language (text) embeddings and visual (image) embeddings. Language embeddings follows the Bert's embedding structure which is the sum of: token embeddings, segment embeddings, and position embeddings. In addition to Bert, they introduced visual embeddings by summing: a visual feature representation of the bounding region, a segment embedding indicating it is an image embedding, a position embedding which is used when alignments between words and bounding regions are provided as part of the input, and set to the sum of the position embeddings corresponding to the aligned words (what?). Object proposals are extracted by using Faster-RCNN. VisualBert is trained on COCO image caption dataset that contains 5 captions per image. which It is pre-trained on two visually grounded tasks: masked language modeling and sentence image alignments. In MLM, part of the text is masked randomly and model tries to predict the masked words by using remaining words and the visual context coming from the corresponding image. In sentence-image prediction objective, the model is trained to decide wheter the given text matches the image or not. VisualBERT is evaluated on four different datasets: VQA v2.0 (question answering), VCR (visual reasoning), NLVR (visual reasoning), and Flickr30k (region-to-phrase grounding.)
+
+![alt text](https://github.com/emrecanacikgoz/papers/blob/main/multimodal/figs/visualbert.png)
 
 ## ViLBert
 To-Do
