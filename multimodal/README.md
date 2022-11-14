@@ -12,7 +12,7 @@ VL-BERT takes both visual and linguistic embedded features as input. Each input 
 - Segment Embedding:  A learned segment embedding is added to every input element for indicating which segment it belongs to. There are three types of segments in VL-BERT: A, B, C. They are defined to separate input elements from different sources. A and B are defined for the words from the first and second input sentence, and C for the RoIs from the input image. For QA the format is <Question, Answer, Image> where A denotes Question, B denotes Answer, and C denotes Image. For Image-Caption task, the input format is <Caption, Image> where A denotes Caption, and C denotes Image.
 - Sequence Position Embedding: Same in BERT. Each input element indicated its order in the input sequence and the learnable sequence position embedding is added to every input element indicating its order in the input sequence. The sequence position embedding for all visual elements are the same since there is no natural order among input visual elements.
 ```
-![alt text](https://github.com/emrecanacikgoz/papers/multimodal/figs/vlbert.png)
+![alt text](https://github.com/emrecanacikgoz/papers/blob/main/multimodal/figs/vlbert.png)
 
 
 
@@ -21,7 +21,7 @@ VL-BERT takes both visual and linguistic embedded features as input. Each input 
 
 Lxmert built on two single-modal network architectures that is used for source sentences and images respectively and a follow-up cross-modal Encoder combines these two modality. Lxmert consist of three encoders: object relationship encoder, language encoder, and cross-modality encoder. It is pre-trained on 5 different tasks: masked language modeling, masked object prediction via RoI-feature regressin, masked objectd predicition via detected-label classification, cross-modallity matching, and image question answering. On the other hand, is tis pre-trained on MS COCO(captioning), Visual Genome (captioning), VQA v2.0 (question answering), GQA (question answering), and VG-QA (question answering) datasets. They pre-train all the encoders and embedding layers from scratch, they didn't use any LLM embeddings for initialization. They used WordPiece tokenizer as in Bert for language side before giving them to the language encoder and they used 101-layer Faster R-CNN (pre-trained on Visual Genome) as feature extractor for image side before feeding them to object-relationship encoder. They accepted these detected labels output as ground truths. The outputs of the object-relationship encoder and language encoder are given to cross-modality encoder to align the features between these two modality to learn the joint representations. At the end, model produces three outputs as vision output (RoI Feature Regression + Detected-Label Classification), cross-modality output (Cross-Modality Matching + Q/A), and language output (Masked Cross-Modality LM). Pros: pre-trained on a massive visual question answering data. Cons: Single-stream architecture that contaions two single modal Transformer for vision and language, followed by one cross-modal Transformer for joint representation.
 
-![alt text](https://github.com/emrecanacikgoz/papers/multimodal/figs/lxmert.png)
+![alt text](https://github.com/emrecanacikgoz/papers/blob/main/multimodal/figs/lxmert.png)
 
 
 ## Visual-Bert
