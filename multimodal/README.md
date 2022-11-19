@@ -33,5 +33,35 @@ VisualBERT is a pre-trained model build on stack of Transformer layers image and
 ![alt text](https://github.com/emrecanacikgoz/papers/blob/main/multimodal/figs/visualbert.png)
 
 ## ViLBert
+VilBert is a two-stream multimodal model that contains seperate networks to process image and text inputs. It fuses two different modality by using attention-based interactions, i.e. transformer layers. It is pre-trained on two tasks: Masked Multi-modal Modelling and Multi-modal Alignment Prediction. In Masked Multi-modal Modelling, %15 of the words and image regions in the input are masked tandomly. Model tries to reconstruct the masked feature from remaining words and regions. On the other hand, in Multi-modal Alignment Prediction, model tries to predict the correspondance of an image and text segment, i.e. whether the image content is described by the caption or not. They initilized the text-side of the VilBert model with BERT-based embeddings. The region features for image side is exctracted by using Faster R-CNN model that is pretrain on VG dataset. Then, pre-training is done on Conceptual Captions dataset by following these two proxy tasks. VilBert is evaluated on five different downstream task: Vusial Question Answering (on VQA 2.0 dataset), Visual Commensense Reasoning (on VCR dataset), Grounding Referring Expressions (RefCOCO+ dataset), Caption-Based Image Retrieval (Flickr30k dataset), ‘Zero-shot’ Caption-Based Image Retrieval (Flicker30k without fine-tunning).
+
+![alt text](https://github.com/emrecanacikgoz/papers/blob/main/multimodal/figs/vilbert-model-1.png)
+![alt text](https://github.com/emrecanacikgoz/papers/blob/main/multimodal/figs/vilbert-model-2.png)
+![alt text](https://github.com/emrecanacikgoz/papers/blob/main/multimodal/figs/vilbert-model-3.png)
+
+## Unicoder-VL
 To-Do
 
+## Uniter
+To-Do
+
+## CLIP
+To-Do
+
+## Vokenizer
+To-Do
+
+# Readings Left
+- [ ] MCB, 2017
+- [ ] DFAF, 2019
+- [ ] BAN, 2018
+- [ ] B2T2, 2019
+- [ ] Villa, 2020
+- [ ] SCAN, 2018
+- [ ] MattNet, 2018
+- [ ] VLP, 2020
+- [ ] VinVL, 2021
+- [ ] Florence, 2021
+- [ ] BLIP, 2022
+- [ ] Glide, 2022
+- [ ] SimVLM, 2022
